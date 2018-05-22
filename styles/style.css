@@ -1,0 +1,54 @@
+body {
+    width: 100%;
+    background-color: #091507;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+.form {
+    width: 520px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.form__name label, input{
+    display: block;
+}
+
+.form__text label, textarea{
+    display: block;
+}
+
+.form__text textarea {
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: block;
+    width: 150px;
+    height: 40px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 16px;
+    background-color: #ffa315;
+    border: none;
+    border-radius: 15px;
+    transition: all ease 0.5s;
+
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #dc8c12;
+}
