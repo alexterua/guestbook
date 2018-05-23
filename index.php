@@ -3,11 +3,9 @@
 header("Content-Type: text/html; charset=utf-8");
 error_reporting(-1);
 
-//====  Константы  ====//
+//====  Внешние подключения  ====//
 
-// Имя/Путь файла/к файлу
-const PATH = 'guestbook.txt';
-
+require_once 'connect.php';
 require_once 'functions.php';
 
 if (!empty($_POST)) {
@@ -21,7 +19,7 @@ if (!empty($_POST)) {
 //====  Считывание файла  ====//
 
 $messages = getMessage();
-$messages = arrayMessage($messages);
+//printArray($messages);
 
 ?>
 
@@ -53,11 +51,10 @@ $messages = arrayMessage($messages);
     <div class="messages">
     <?php if (!empty($messages)): ?>
         <?php foreach ($messages as $message): ?>
-            <?php $message = getFormatMessage($message); ?>
-                <div class="message">
-                    <p>Автор: <?=htmlspecialchars($message[0]); ?> |  Дата: <?=$message[2]; ?></p>
-                    <?=nl2br(htmlspecialchars($message[1])); ?>
-                </div>
+            <div class="message">
+                <p>Автор: <?=htmlspecialchars($message['name']); ?> |  Дата: <?=$message['date']; ?></p>
+                <?=nl2br(htmlspecialchars($message['text'])); ?>
+            </div>
         <?php endforeach; ?>
     <?php endif; ?>
     </div>
